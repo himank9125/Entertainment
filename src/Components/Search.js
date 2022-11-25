@@ -90,7 +90,7 @@ export default function Search() {
               }}
             />
             <button type="submit" onClick={Search}>
-              <i class="fa fa-search"></i>
+              <i className="fa fa-search"></i>
             </button>
           </form>
         </div>
