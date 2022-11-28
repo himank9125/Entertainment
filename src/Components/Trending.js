@@ -1,27 +1,21 @@
 import React, { useEffect, useState } from "react";
 import SingleCard from "./SingleCard";
 import Footer from "./Footer";
+import useFetchData from "./useFetchData";
 
 export default function Trending() {
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
+  const [data, searching] = useFetchData();
+  let url = `https://api.themoviedb.org/3/trending/all/day?api_key=9b6d4484579f620925d5cf5bf1adddcf&page=${page}`;
 
-  let FetchData = () => {
-    let url = `https://api.themoviedb.org/3/trending/all/day?api_key=9b6d4484579f620925d5cf5bf1adddcf&page=${page}`;
-    let data = fetch(url);
-    data
-      .then((elm) => {
-        return elm.json();
-      })
-      .then((elm) => {
-        setItems(elm.results);
-        // console.log(elm.results);
-      });
-  };
   useEffect(() => {
-    FetchData();
+    searching(url);
   }, [page]);
 
+  useEffect(() => {
+    setItems(data);
+  }, [data]);
   return (
     <div>
       <div className="headHeader">

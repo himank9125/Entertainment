@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import SingleCard from "./SingleCard";
 import Footer from "./Footer";
+import useFetchData from "./useFetchData";
 
 export default function Search() {
   const [items, setItems] = useState([]);
@@ -9,6 +10,10 @@ export default function Search() {
   const [searchText, setSearchText] = useState("a");
   const [text, setText] = useState("");
   const [type, setType] = useState(true);
+  const [data, seacrching] = useFetchData();
+  let url = `https://api.themoviedb.org/3/search/${
+    type ? "tv" : "movie"
+  }?api_key=9b6d4484579f620925d5cf5bf1adddcf&language=en-US&query=${searchText}&page=${page}&include_adult=false`;
 
   let Search = (e) => {
     e.preventDefault();
@@ -16,24 +21,13 @@ export default function Search() {
       setSearchText(text);
     }
   };
-  let FetchData = () => {
-    let url = `https://api.themoviedb.org/3/search/${
-      type ? "tv" : "movie"
-    }?api_key=9b6d4484579f620925d5cf5bf1adddcf&language=en-US&query=${searchText}&page=${page}&include_adult=false`;
-    let data = fetch(url);
-    data
-      .then((elm) => {
-        return elm.json();
-      })
-      .then((elm) => {
-        setItems(elm.results);
-        // console.log(elm.results);
-      });
-  };
-  useEffect(() => {
-    FetchData();
-  }, [searchText, page, type]);
 
+  useEffect(() => {
+    seacrching(url);
+  }, [searchText, page, type]);
+  useEffect(() => {
+    setItems(data);
+  }, [data]);
   return (
     <div>
       <div className="topnav">

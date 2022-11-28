@@ -7,6 +7,10 @@ import Trending from "./Components/Trending";
 import Movie from "./Components/Movie";
 import TVSeries from "./Components/TVSeries";
 import Search from "./Components/Search";
+import NotAvailable from "./Components/NotAvailable";
+import React, { Suspense } from "react";
+import LazyLoading from "./Components/LazyLoading";
+// const Trending = React.lazy(() => import("./Components/Trending"));
 
 function App() {
   return (
@@ -19,6 +23,7 @@ function App() {
               <Route path="movie" element={<Movie />} />
               <Route path="tv" element={<TVSeries />} />
               <Route path="search" element={<Search />} />
+              <Route path="*" element={<NotAvailable />} />
             </Route>
           </Route>
         </Routes>

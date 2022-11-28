@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-export default function useFetchData(url) {
+export default function useFetchData() {
   const [fetchedData, setFetcheddata] = useState([]);
-  useEffect(() => {
+  let fetching = (url) => {
     let data = fetch(url);
     data
       .then((elm) => {
@@ -11,7 +11,7 @@ export default function useFetchData(url) {
       .then((elm) => {
         setFetcheddata(elm.results);
       });
-  }, [url]);
+  };
 
-  return [fetchedData];
+  return [fetchedData, fetching];
 }
