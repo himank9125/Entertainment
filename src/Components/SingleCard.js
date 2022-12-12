@@ -1,5 +1,5 @@
 import React from "react";
-import NA from "./NA.jpg";
+import NA from "./NA.png";
 let prePath = "https://image.tmdb.org/t/p/w300/";
 export default function SingleCard(props) {
   return props.data.map((e, idx) => {
