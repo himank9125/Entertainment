@@ -1,8 +1,7 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import "./Styles.css";
-import LazyLoading from "./LazyLoading";
 
 export default function Head() {
   return (

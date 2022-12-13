@@ -1,6 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./Components/Header";
 import Head from "./Components/Head";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Trending from "./Components/Trending";
@@ -8,8 +6,8 @@ import Movie from "./Components/Movie";
 import TVSeries from "./Components/TVSeries";
 import Search from "./Components/Search";
 import NotAvailable from "./Components/NotAvailable";
-import React, { Suspense } from "react";
-import LazyLoading from "./Components/LazyLoading";
+import React from "react";
+
 // const Trending = React.lazy(() => import("./Components/Trending"));
 
 function App() {
