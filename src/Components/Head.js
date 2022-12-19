@@ -1,14 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import "./Styles.css";
+import Header from "./Pages/subPages/Header";
+import "./css/Styles.css";
 
 export default function Head() {
   return (
     <div className="main-container">
-      <div className="main-document">
-        <Header />
-      </div>
+      <Header />
       <div className="main-wrapper">
         <Outlet />
       </div>

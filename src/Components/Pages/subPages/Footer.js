@@ -1,12 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 export default function Footer(props) {
   return (
     <div className="topnav">
       <a
         href="#"
-        className="previous"
         onClick={() => {
           props.page > 1 && props.setPage(props.page - 1);
         }}

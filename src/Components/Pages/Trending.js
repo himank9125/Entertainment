@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import SingleCard from "./SingleCard";
-import Footer from "./Footer";
-import useFetchData from "./useFetchData";
+import SingleCard from "./subPages/SingleCard";
+import Footer from "./subPages/Footer";
+import useFetchData from "../hooks/useFetchData";
 
 export default function Trending() {
   const [items, setItems] = useState([]);

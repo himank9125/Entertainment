@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Footer from "./Footer";
-import SingleCard from "./SingleCard";
-import useFetchData from "./useFetchData";
+import Footer from "./subPages/Footer";
+import SingleCard from "./subPages/SingleCard";
+import useFetchData from "../hooks/useFetchData";
 
 export default function Movie() {
   const [items, setItems] = useState([]);

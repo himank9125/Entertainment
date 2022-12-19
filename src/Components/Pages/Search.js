@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import SingleCard from "./SingleCard";
-import Footer from "./Footer";
-import useFetchData from "./useFetchData";
+import SingleCard from "./subPages/SingleCard";
+import Footer from "./subPages/Footer";
+import useFetchData from "../hooks/useFetchData";
 
 export default function Search() {
   const [items, setItems] = useState([]);
